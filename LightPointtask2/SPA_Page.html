@@ -23,6 +23,20 @@
   left: -9999px;
 }
 
+  .storeItem-details {
+    max-height: 100px;
+    transition: .8s;
+    overflow: hidden;
+}
+
+  .storeItem-details.hidden {
+  max-height: 0;
+}
+  li {    
+    list-style: none;
+    padding: 10px;
+}
+
     </style>
 </head>
 <body ng-controller="ShopController">
@@ -36,28 +50,34 @@
         <br />
         <button ng-click="addShop()">AddShop</button>
 
-        <br />
-
         <button ng-click="deleteShopbyName()">DeleteShopByName</button>
         
     </fieldset>
     <br />
+    <fieldset>
+        <legend>Current Shops:</legend>
 
         <p>Total number of Shops: {{Shops.length}}</p>
 
         <ul>
-            <li ng-repeat="(StoreIndex, Shop) in Shops">
+            <li ng-repeat="(StoreIndex, Shop) in Shops | orderBy:Name">
                 <span>{{Shop.id}}</span>
                 <p>{{Shop.Name}}</p>
                 <p>Working Time: {{Shop.WorkStartTime}} - {{Shop.WorkStopTime}}</p>
                 <p>Address: {{Shop.Address}}</p>
                 <p>Our motto: {{Shop.Description}}</p>
                 <p>Show our Store? : <input type="checkbox" ng-model="checked"></p>
-                <a ng-repeat="storeItem in Shops[StoreIndex].Stores" ng-show="checked">
-                    {{ storeItem.Name }} - {{storeItem.Description}}
-                </a>
-            </li>
-        </ul>
 
+                <a ng-repeat="storeItem in Shops[StoreIndex].Stores" ng-show="checked" href="#" ng-click="showDetails = ! showDetails">
+                    {{storeItem.Name }}
+                    <p class="storeItem-details" ng-class="{ 'hidden': ! showDetails }">Number of patient discharges:{{storeItem.Description}}</p>
+                </a>
+
+                
+</li>
+        </ul>
+    </fieldset>
+    <br />
+    <footer>Create by Glareone 2015</footer>
 </body>
 </html>
