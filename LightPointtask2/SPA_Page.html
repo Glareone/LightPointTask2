@@ -49,7 +49,10 @@
             <li ng-repeat="(StoreIndex, Shop) in Shops">
                 <span>{{Shop.id}}</span>
                 <p>{{Shop.Name}}</p>
-                <p>{{Shop.Description}} <input type="checkbox" ng-model="checked"> </p>
+                <p>Working Time: {{Shop.WorkStartTime}} - {{Shop.WorkStopTime}}</p>
+                <p>Address: {{Shop.Address}}</p>
+                <p>Our motto: {{Shop.Description}}</p>
+                <p>Show our Store? : <input type="checkbox" ng-model="checked"></p>
                 <a ng-repeat="storeItem in Shops[StoreIndex].Stores" ng-show="checked">
                     {{ storeItem.Name }} - {{storeItem.Description}}
                 </a>

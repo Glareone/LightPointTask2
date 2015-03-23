@@ -4,6 +4,9 @@ app.controller('ShopController', ['$scope', function ($scope) {
     $scope.Shops = [{
         id: 1,
         Name: 'Bakery',
+        WorkStartTime: '9:00',
+        WorkStopTime: '18:00',
+        Address: '5,Chapaeva str.,Minsk',
         Description: 'From Oven With Love',
         Stores: [
             { id: 1, Name: 'Roll', Description: 'With Flavour' },
@@ -16,6 +19,9 @@ app.controller('ShopController', ['$scope', function ($scope) {
         {
             id: 2,
             Name: 'Bike Shop',
+            WorkStartTime: '10:30',
+            WorkStopTime: '20:30',
+            Address: '155/5,Bogdanovich str.,Minsk',
             Description: 'We made bikes from nothing!',
             Stores: [
                 { id: 1, Name: 'Suzuki Bandit', Description: '138HP' },
@@ -28,6 +34,9 @@ app.controller('ShopController', ['$scope', function ($scope) {
         {
             id: 3,
             Name: 'Bike Equipment Shop',
+            WorkStartTime: '10:00',
+            WorkStopTime: '19:00',
+            Address: '25,Sharangovich str.,Minsk',
             Description: 'God Save Us!',
             Stores: [
                 { id: 1, Name: 'Helmet', Description: '138HP' },
@@ -48,7 +57,7 @@ app.controller('ShopController', ['$scope', function ($scope) {
     };
 
     $scope.addShop = function () {
-      var id = $(shopid)
+        var id = $(shopid);
     };
 
     $scope.getAllShops = function () {
