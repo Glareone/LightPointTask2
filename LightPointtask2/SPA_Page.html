@@ -3,37 +3,54 @@
 <html ng-app="app">
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    
     <script src="./Scripts/Controllers/Controller.js"></script>
     <script src="./Scripts/Models/ShopsModel.js"></script>
     <script src="./Scripts/Models/GoodsModel.js"></script>
-    <title></title>
+    <title>Task2 Angular for LightPoint</title>
+    <style>
+  .ng-hide:not(.ng-hide-animate) {
+  /* this is just another form of hiding an element */
+  display: block!important;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+    </style>
 </head>
 <body ng-controller="ShopController">
-
+    <fieldset>
+        <legend>Adding\Deleting Shops</legend>
         Id: <input id="Shopid" type="text" ng-model="Shop.id" />
         <br />
-        Name:<input id="ShopName"  type="text" ng-model="Shop.Name" />
+        Name:<input id="ShopName" type="text" ng-model="Shop.Name" />
         <br />
         Description: <input id="ShopDesc" type="text" ng-model="Shop.Description" />
         <br />
         <button ng-click="addShop()">AddShop</button>
 
         <br />
-        
-        <button ng-click="deleteShopbyName()">DeleteShopByName</button>
 
-        <br />
-        <p>hello {{$scope.name}}</p>
+        <button ng-click="deleteShopbyName()">DeleteShopByName</button>
+        
+    </fieldset>
+    <br />
+
         <p>Total number of Shops: {{Shops.length}}</p>
 
         <ul>
             <li ng-repeat="(StoreIndex, Shop) in Shops">
                 <span>{{Shop.id}}</span>
                 <p>{{Shop.Name}}</p>
-                <p>{{Shop.Description}}</p>
-                <a ng-repeat="storeItem in Shops[StoreIndex].Stores">
+                <p>{{Shop.Description}} <input type="checkbox" ng-model="checked"> </p>
+                <a ng-repeat="storeItem in Shops[StoreIndex].Stores" ng-show="checked">
                     {{ storeItem.Name }} - {{storeItem.Description}}
                 </a>
             </li>

@@ -3,7 +3,7 @@
 app.controller('ShopController', ['$scope', function ($scope) {
     $scope.Shops = [{
         id: 1,
-        Name: 'Bulochnaya',
+        Name: 'Bakery',
         Description: 'From Oven With Love',
         Stores: [
             { id: 1, Name: 'Roll', Description: 'With Flavour' },
@@ -15,7 +15,7 @@ app.controller('ShopController', ['$scope', function ($scope) {
     },
         {
             id: 2,
-            Name: 'BikeShop',
+            Name: 'Bike Shop',
             Description: 'We made bikes from nothing!',
             Stores: [
                 { id: 1, Name: 'Suzuki Bandit', Description: '138HP' },
@@ -27,7 +27,7 @@ app.controller('ShopController', ['$scope', function ($scope) {
         },
         {
             id: 3,
-            Name: 'BikeEquipmentShop',
+            Name: 'Bike Equipment Shop',
             Description: 'God Save Us!',
             Stores: [
                 { id: 1, Name: 'Helmet', Description: '138HP' },
@@ -39,13 +39,11 @@ app.controller('ShopController', ['$scope', function ($scope) {
         }
     ];
 
-    $scope.name = "World";
 
-    // CRUD Methods
-    $scope.deleteShopbyName = function (ShopName) {
+    $scope.deleteShopbyName = function () {
     };
     
-    $scope.deleteShopByID = function (ShopId) {
+    $scope.deleteShopByID = function () {
 
     };
 
