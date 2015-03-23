@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html ng-app>
+<html ng-app="app">
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -10,30 +10,34 @@
     <script src="./Scripts/Models/GoodsModel.js"></script>
     <title></title>
 </head>
-<body>
-    <div ng-controller="ShopController">
-        Id: <input type="text" ng-model="Shop.id" />
+<body ng-controller="ShopController">
+
+        Id: <input id="Shopid" type="text" ng-model="Shop.id" />
         <br />
-        Name:<input type="text" ng-model="Shop.Name" />
+        Name:<input id="ShopName"  type="text" ng-model="Shop.Name" />
         <br />
-        Author: <input type="text" ng-model="Shop.Description" />
+        Description: <input id="ShopDesc" type="text" ng-model="Shop.Description" />
         <br />
         <button ng-click="addShop()">AddShop</button>
 
         <br />
-
+        
         <button ng-click="deleteShopbyName()">DeleteShopByName</button>
-        
-        
+
+        <br />
+        <p>hello {{$scope.name}}</p>
+        <p>Total number of Shops: {{Shops.length}}</p>
+
         <ul>
-            <li ng-repeat="Shop in Shops">
+            <li ng-repeat="(StoreIndex, Shop) in Shops">
                 <span>{{Shop.id}}</span>
                 <p>{{Shop.Name}}</p>
                 <p>{{Shop.Description}}</p>
+                <a ng-repeat="storeItem in Shops[StoreIndex].Stores">
+                    {{ storeItem.Name }} - {{storeItem.Description}}
+                </a>
             </li>
         </ul>
-
-    </div>
 
 </body>
 </html>

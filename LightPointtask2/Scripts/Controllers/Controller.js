@@ -1,10 +1,11 @@
-﻿app.controller('ShopController', ['$scope', function ($scope) {
-    //перенести в модель потом
+﻿var app = angular.module('app', []);
+
+app.controller('ShopController', ['$scope', function ($scope) {
     $scope.Shops = [{
         id: 1,
         Name: 'Bulochnaya',
         Description: 'From Oven With Love',
-        stores: [
+        Stores: [
             { id: 1, Name: 'Roll', Description: 'With Flavour' },
             { id: 2, Name: 'Roll', Description: 'With Plum' },
             { id: 3, Name: 'Roll', Description: 'Delicious' },
@@ -16,7 +17,7 @@
             id: 2,
             Name: 'BikeShop',
             Description: 'We made bikes from nothing!',
-            stores: [
+            Stores: [
                 { id: 1, Name: 'Suzuki Bandit', Description: '138HP' },
                 { id: 2, Name: 'Honda Hornet', Description: '98HP' },
                 { id: 3, Name: 'Ducati Multistrada', Description: '120HP' },
@@ -28,7 +29,7 @@
             id: 3,
             Name: 'BikeEquipmentShop',
             Description: 'God Save Us!',
-            stores: [
+            Stores: [
                 { id: 1, Name: 'Helmet', Description: '138HP' },
                 { id: 2, Name: 'KneeGuard', Description: '98HP' },
                 { id: 3, Name: 'Leather jacket', Description: '120HP' },
@@ -38,6 +39,8 @@
         }
     ];
 
+    $scope.name = "World";
+
     // CRUD Methods
     $scope.deleteShopbyName = function (ShopName) {
     };
@@ -46,8 +49,8 @@
 
     };
 
-    $scope.addShop = function (Id, Name, Description) {
-      
+    $scope.addShop = function () {
+      var id = $(shopid)
     };
 
     $scope.getAllShops = function () {
