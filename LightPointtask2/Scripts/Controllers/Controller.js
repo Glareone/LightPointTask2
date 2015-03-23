@@ -39,15 +39,14 @@ app.controller('ShopController', ['$scope', function ($scope) {
             Address: '25,Sharangovich str.,Minsk',
             Description: 'God Save Us!',
             Stores: [
-                { id: 1, Name: 'Helmet', Description: '138HP' },
-                { id: 2, Name: 'KneeGuard', Description: '98HP' },
-                { id: 3, Name: 'Leather jacket', Description: '120HP' },
-                { id: 4, Name: 'Elbow Protection', Description: '78HP' },
-                { id: 5, Name: 'Kawasaki H2R', Description: '300HP' }
+                { id: 1, Name: 'Helmet', Description: 'Some Info' },
+                { id: 2, Name: 'KneeGuard', Description: 'Another Info' },
+                { id: 3, Name: 'Leather jacket', Description: 'Soft leather with protectors' },
+                { id: 4, Name: 'Elbow Protection', Description: 'High durable plastic' },
+                { id: 5, Name: 'Sun Glasses', Description: 'Polaroid' }
             ]
         }
     ];
-
 
     $scope.deleteShopbyName = function () {
     };
@@ -57,10 +56,23 @@ app.controller('ShopController', ['$scope', function ($scope) {
     };
 
     $scope.addShop = function () {
-        var id = $(shopid);
+        var NewShop = {
+            id: Shops.length + 1,
+            Name: 'ololo',
+            Desc: 'ololo2'
+        }
+        Shops[Shops.length] = NewShop;
+        console.log(JSON.stringify($scope.Shops.length));
     };
 
     $scope.getAllShops = function () {
 
     };
+
+
+    $scope.GetItemDescription = function () {
+
+    };
+
+    $scope.GetItemsFor
 }]);
