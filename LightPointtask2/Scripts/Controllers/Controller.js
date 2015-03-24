@@ -8,6 +8,7 @@ app.controller('ShopController', ['$scope', function ($scope) {
         WorkStopTime: '18:00',
         Address: '5,Chapaeva str.,Minsk',
         Description: 'From Oven With Love',
+        Image: './img/Shops/bakery.jpg',
         Stores: [
             { id: 1, Name: 'Roll', Description: 'With Flavour' },
             { id: 2, Name: 'Roll', Description: 'With Plum' },
@@ -23,6 +24,7 @@ app.controller('ShopController', ['$scope', function ($scope) {
             WorkStopTime: '20:30',
             Address: '155/5,Bogdanovich str.,Minsk',
             Description: 'We made bikes from nothing!',
+            Image: './img/Shops/bikeShop.jpg',
             Stores: [
                 { id: 1, Name: 'Suzuki Bandit', Description: '138HP' },
                 { id: 2, Name: 'Honda Hornet', Description: '98HP' },
@@ -38,6 +40,7 @@ app.controller('ShopController', ['$scope', function ($scope) {
             WorkStopTime: '19:00',
             Address: '25,Sharangovich str.,Minsk',
             Description: 'God Save Us!',
+            Image: './img/Shops/bikeEquip.jpg',
             Stores: [
                 { id: 1, Name: 'Helmet', Description: 'Some Info' },
                 { id: 2, Name: 'KneeGuard', Description: 'Another Info' },

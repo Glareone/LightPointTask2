@@ -39,6 +39,10 @@
   .footer {
       text-align: center;
   }
+  .solidtext {
+      text-decoration-style: solid;
+      text-decoration-line: underline;
+  }
 
     </style>
 </head>
@@ -64,7 +68,9 @@
 
         <ul>
             <li ng-repeat="(StoreIndex, Shop) in Shops | orderBy:Name">
-                <span>{{Shop.id}}</span>
+                
+                <p class="solidtext">{{Shop.id}}</p>
+                <img src="{{Shop.Image}}"  width="150" height="150">
                 <p>{{Shop.Name}}</p>
                 <p>Working Time: {{Shop.WorkStartTime}} - {{Shop.WorkStopTime}}</p>
                 <p>Address: {{Shop.Address}}</p>
