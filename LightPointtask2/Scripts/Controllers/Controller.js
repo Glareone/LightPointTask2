@@ -72,15 +72,22 @@ app.controller('ShopController', ['$scope', function ($scope) {
 
     };
 
+    $scope.GetShopDesc = function (id) {
+
+        $scope.Shops.forEach(function (shop) {
+            if (shop.id == id) {
+                alert(shop.Description);
+            }
+        });
+    };
 
     $scope.GetItemDescription = function () {
 
     };
 
-    $scope.GetItemsFromShop = function () {
-        return $scope.Shops[1].Name;
-    };
-
+    $scope.Visible = function () {
+        showDetails = ! showDetails;
+    }
 
 
     $scope.reloadPage = function () { window.location.reload(); }

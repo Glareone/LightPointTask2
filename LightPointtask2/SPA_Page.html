@@ -81,7 +81,11 @@
                     {{storeItem.Name }}
                     <p class="storeItem-details" ng-class="{ 'hidden': ! showDetails }">Number of patient discharges:{{storeItem.Description}}</p>
                 </a>
-</li>
+                <div>
+                    <button ng-click="GetShopDesc(Shop.id)">Get {{Shop.Name}} Store</button>
+
+                </div>
+            </li>
         </ul>
     </fieldset>
     <br />
