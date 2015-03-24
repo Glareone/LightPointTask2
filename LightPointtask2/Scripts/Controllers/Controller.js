@@ -81,9 +81,20 @@ app.controller('ShopController', ['$scope', function ($scope) {
         });
     };
 
-    $scope.GetItemDescription = function () {
+    $scope.GetItemDesc = function (ShopId,ItemId) {
+        $scope.Shops[ShopId-1].Stores.forEach(function (item) {
+            if (item.id == ItemId) {
+                alert(item.Description);
+                $("#StoreItemId").Text = item.id;
+                $("#StoreItemName").Text = item.Name;
+                $("#StoreItemDesc").Text = item.Description;
+                $("#popupMask").Visible = true;
 
+                
+            }
+        });
     };
+
 
     $scope.Visible = function () {
         showDetails = ! showDetails;

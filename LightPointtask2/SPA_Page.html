@@ -14,35 +14,65 @@
     <script src="./Scripts/Models/ShopsModel.js"></script>
     <script src="./Scripts/Models/GoodsModel.js"></script>
     <title>Task2 Angular for LightPoint</title>
-    <style>
-  .ng-hide:not(.ng-hide-animate) {
-  /* this is just another form of hiding an element */
-  display: block!important;
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-}
+    <style type="text/css">
+        .ng-hide:not(.ng-hide-animate) {
+            /* this is just another form of hiding an element */
+            display: block !important;
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
 
-  .storeItem-details {
-    max-height: 100px;
-    transition: .8s;
-    overflow: hidden;
-}
+        .storeItem-details {
+            max-height: 100px;
+            transition: .8s;
+            overflow: hidden;
+        }
 
-  .storeItem-details.hidden {
-  max-height: 0;
-}
-  li {    
-    list-style: none;
-    padding: 10px;
-}
-  .footer {
-      text-align: center;
-  }
-  .solidtext {
-      text-decoration-style: solid;
-      text-decoration-line: underline;
-  }
+            .storeItem-details.hidden {
+                max-height: 0;
+            }
+
+        li {
+            list-style: none;
+            padding: 10px;
+        }
+
+        .footer {
+            text-align: center;
+        }
+
+        .solidtext {
+            text-decoration-style: solid;
+            text-decoration-line: underline;
+        }
+
+        #divPopupHeader {
+            background-color: #595959;
+            color: #FFFFFF;
+            font-weight: bold;
+            padding: 10px;
+         }
+
+         #popupButtonRow {
+            position: relative;
+            float: left;
+            left: 0;
+            background-color: #E6E6E6;
+            width: 100%;
+            padding-bottom: 10px;
+            padding-top: 10px;
+         }
+
+         .popupMask {
+             position: fixed;
+             top: 0;
+             left: 0;
+             height: 100%;
+             width: 100%;
+             background: rgba(170, 170, 170, 0.5);
+         }
+
 
     </style>
 </head>
@@ -76,19 +106,28 @@
                 <p>Address: {{Shop.Address}}</p>
                 <p>Our motto: {{Shop.Description}}</p>
                 <p>Show our Store? : <input type="checkbox"  ng-model="checked"></p>
-
-                <a ng-repeat="storeItem in Shops[StoreIndex].Stores" ng-show="checked" href="#" ng-click="showDetails = ! showDetails">
-                    {{storeItem.Name }}
-                    <p class="storeItem-details" ng-class="{ 'hidden': ! showDetails }">Number of patient discharges:{{storeItem.Description}}</p>
-                </a>
                 <div>
-                    <button ng-click="GetShopDesc(Shop.id)">Get {{Shop.Name}} Store</button>
+                    <button ng-click="GetShopDesc(Shop.id)">Get {{Shop.Name}} Desc</button>
 
                 </div>
+                <a ng-repeat="storeItem in Shops[StoreIndex].Stores" ng-show="checked" href="#">
+                    {{storeItem.Name }}
+                    <p ng-click="GetItemDesc(Shop.id,storeItem.id)">Desc:{{storeItem.Description}}</p>
+                </a>
             </li>
         </ul>
     </fieldset>
     <br />
-    <footer class="footer">Create by Glareone 2015</footer>
+    
+    <div ID="popupMask" class="popupMaskClass" Visible="false">
+        <a id="PopupLable">Store information</a>
+        <a id="StoreItemId"></a>
+        <br />
+        <a id="StoreItemName"></a>
+        <br />
+        <a id="StoreItemDesc"></a>
+    </div>
+
+        <footer class="footer">Create by Glareone 2015</footer>
 </body>
 </html>
