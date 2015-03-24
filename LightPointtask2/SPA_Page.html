@@ -64,7 +64,7 @@
             padding-top: 10px;
          }
 
-         .popupMask {
+         .popupMaskClass {
              position: fixed;
              top: 0;
              left: 0;
@@ -72,7 +72,31 @@
              width: 100%;
              background: rgba(170, 170, 170, 0.5);
          }
+         .animate-show {
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}
 
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
+.check-element {
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}
 
     </style>
 </head>
@@ -85,7 +109,7 @@
         <br />
         Description: <input id="ShopDesc" type="text" ng-model="Shop.Description" />
         <br />
-        <button ng-click="AddShop({{ShopName}},{{ShopDesc}})">AddShop</button>
+        <button ng-click="AddShop($('#ShopName').Text(),$('#ShopId').Text())">AddShop</button>
 
         <button ng-click="deleteShopbyName()">DeleteShopByName</button>
         <button ng-click="reloadPage()">ReloadPageTest</button>
@@ -110,7 +134,7 @@
                     <button ng-click="GetShopDesc(Shop.id)">Get {{Shop.Name}} Desc</button>
 
                 </div>
-                <a ng-repeat="storeItem in Shops[StoreIndex].Stores" ng-show="checked" href="#">
+                <a class="animate-show" ng-repeat="storeItem in Shops[StoreIndex].Stores" ng-show="checked" href="#">
                     {{storeItem.Name }}
                     <p ng-click="GetItemDesc(Shop.id,storeItem.id)">Desc:{{storeItem.Description}}</p>
                 </a>
@@ -119,13 +143,13 @@
     </fieldset>
     <br />
     
-    <div ID="popupMask" class="popupMaskClass" Visible="false">
+    <div ID="popupMask" class="popupMaskClass2" Visible="false">
         <a id="PopupLable">Store information</a>
-        <a id="StoreItemId"></a>
+        <label id="StoreItemId"></label>
         <br />
-        <a id="StoreItemName"></a>
+        <label id="StoreItemName"></label>
         <br />
-        <a id="StoreItemDesc"></a>
+        <label id="StoreItemDesc"></label>
     </div>
 
         <footer class="footer">Create by Glareone 2015</footer>

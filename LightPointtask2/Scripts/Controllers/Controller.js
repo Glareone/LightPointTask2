@@ -60,12 +60,12 @@ app.controller('ShopController', ['$scope', function ($scope) {
 
     $scope.AddShop = function (name,description) {
         var NewShop = {
-            id: Shops.length + 1,
+            id: $scope.Shops.length + 1,
             Name: name,
             Desc: description
         }
-        $.scope.Shops[Shops.length] = NewShop;
-        $scope.$apply();
+        $scope.Shops.push(NewShop);
+        alert('shop is added');
     };
 
     $scope.getAllShops = function () {
@@ -85,9 +85,9 @@ app.controller('ShopController', ['$scope', function ($scope) {
         $scope.Shops[ShopId-1].Stores.forEach(function (item) {
             if (item.id == ItemId) {
                 alert(item.Description);
-                $("#StoreItemId").Text = item.id;
-                $("#StoreItemName").Text = item.Name;
-                $("#StoreItemDesc").Text = item.Description;
+                $("#StoreItemId").Text(item.id);
+                $("#StoreItemName").Text(item.Name);
+                $("#StoreItemDesc").Text(item.Description);
                 $("#popupMask").Visible = true;
 
                 
