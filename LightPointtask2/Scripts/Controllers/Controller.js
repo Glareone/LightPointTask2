@@ -55,14 +55,14 @@ app.controller('ShopController', ['$scope', function ($scope) {
 
     };
 
-    $scope.addShop = function () {
+    $scope.AddShop = function (name,description) {
         var NewShop = {
             id: Shops.length + 1,
-            Name: 'ololo',
-            Desc: 'ololo2'
+            Name: name,
+            Desc: description
         }
-        Shops[Shops.length] = NewShop;
-        console.log(JSON.stringify($scope.Shops.length));
+        $.scope.Shops[Shops.length] = NewShop;
+        $scope.$apply();
     };
 
     $scope.getAllShops = function () {
@@ -74,5 +74,11 @@ app.controller('ShopController', ['$scope', function ($scope) {
 
     };
 
-    $scope.GetItemsFor
+    $scope.GetItemsFromShop = function () {
+        return $scope.Shops[1].Name;
+    };
+
+
+
+    $scope.reloadPage = function () { window.location.reload(); }
 }]);

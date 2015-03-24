@@ -36,6 +36,9 @@
     list-style: none;
     padding: 10px;
 }
+  .footer {
+      text-align: center;
+  }
 
     </style>
 </head>
@@ -48,15 +51,15 @@
         <br />
         Description: <input id="ShopDesc" type="text" ng-model="Shop.Description" />
         <br />
-        <button ng-click="addShop()">AddShop</button>
+        <button ng-click="AddShop({{ShopName}},{{ShopDesc}})">AddShop</button>
 
         <button ng-click="deleteShopbyName()">DeleteShopByName</button>
-        
+        <button ng-click="reloadPage()">ReloadPageTest</button>
     </fieldset>
     <br />
     <fieldset>
         <legend>Current Shops:</legend>
-
+        <p>{{GetItemsFromShop()}}</p>
         <p>Total number of Shops: {{Shops.length}}</p>
 
         <ul>
@@ -66,7 +69,7 @@
                 <p>Working Time: {{Shop.WorkStartTime}} - {{Shop.WorkStopTime}}</p>
                 <p>Address: {{Shop.Address}}</p>
                 <p>Our motto: {{Shop.Description}}</p>
-                <p>Show our Store? : <input type="checkbox" ng-model="checked"></p>
+                <p>Show our Store? : <input type="checkbox"  ng-model="checked"></p>
 
                 <a ng-repeat="storeItem in Shops[StoreIndex].Stores" ng-show="checked" href="#" ng-click="showDetails = ! showDetails">
                     {{storeItem.Name }}
@@ -76,6 +79,6 @@
         </ul>
     </fieldset>
     <br />
-    <footer>Create by Glareone 2015</footer>
+    <footer class="footer">Create by Glareone 2015</footer>
 </body>
 </html>
