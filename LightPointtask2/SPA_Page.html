@@ -72,44 +72,16 @@
              width: 100%;
              background: rgba(170, 170, 170, 0.5);
          }
-         .animate-show {
-  line-height: 20px;
-  opacity: 1;
-  padding: 10px;
-  border: 1px solid black;
-  background: white;
-}
-
-.animate-show.ng-hide-add.ng-hide-add-active,
-.animate-show.ng-hide-remove.ng-hide-remove-active {
-  -webkit-transition: all linear 0.5s;
-  transition: all linear 0.5s;
-}
-
-.animate-show.ng-hide {
-  line-height: 0;
-  opacity: 0;
-  padding: 0 10px;
-}
-
-.check-element {
-  padding: 10px;
-  border: 1px solid black;
-  background: white;
-}
-
     </style>
 </head>
 <body ng-controller="ShopController">
     <fieldset>
         <legend>Adding\Deleting Shops</legend>
-        Id: <input id="Shopid" type="text" ng-model="Shop.id" />
+        Name:<input id="ShopName" type="text" name="InputShopName" ng-model="InputShop.Name" />
         <br />
-        Name:<input id="ShopName" type="text" ng-model="Shop.Name" />
+        Description: <input id="ShopDesc" type="text" ng-model="InputShop.Description" />
         <br />
-        Description: <input id="ShopDesc" type="text" ng-model="Shop.Description" />
-        <br />
-        <button ng-click="AddShop($('#ShopName').Text(),$('#ShopId').Text())">AddShop</button>
+        <button ng-click="AddShop(InputShop.Name,InputShop.Description)">AddShop</button>
 
         <button ng-click="deleteShopbyName()">DeleteShopByName</button>
         <button ng-click="reloadPage()">ReloadPageTest</button>

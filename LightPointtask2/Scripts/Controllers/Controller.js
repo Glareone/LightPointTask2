@@ -62,8 +62,8 @@ app.controller('ShopController', ['$scope', function ($scope) {
         var NewShop = {
             id: $scope.Shops.length + 1,
             Name: name,
-            Desc: description
-        }
+            Description: description
+        };
         $scope.Shops.push(NewShop);
         alert('shop is added');
     };
