@@ -33,13 +33,10 @@
                 max-height: 0;
             }
 
-        li {
-            list-style: none;
-            padding: 10px;
-        }
-
         .footer {
             text-align: center;
+            margin: 20px 0;
+            border-collapse:collapse;
         }
 
         .solidtext {
@@ -72,9 +69,30 @@
              width: 100%;
              background: rgba(170, 170, 170, 0.5);
          }
+         .item-parent{
+            column-count: 2;
+            column-gap: 20px;
+            -moz-column-count: 2;
+            -webkit-column-count: 2;
+        }
+         .body {
+             margin-left:8%;
+             margin-right: 8%;
+         }
+         .ul {
+             margin-left:5%;
+         }
+         .li {
+             border:burlywood 2px;
+             border-style: outset;
+             padding: 5px;
+         }
+         .li-footer {
+             
+         }
     </style>
 </head>
-<body ng-controller="ShopController">
+<body class="body" ng-controller="ShopController">
     <fieldset>
         <legend>Adding\Deleting Shops</legend>
         Name:<input id="ShopName" type="text" name="InputShopName" ng-model="InputShop.Name" />
@@ -92,8 +110,8 @@
         <p>{{GetItemsFromShop()}}</p>
         <p>Total number of Shops: {{Shops.length}}</p>
 
-        <ul>
-            <li ng-repeat="(StoreIndex, Shop) in Shops | orderBy:Name">
+        <ul class="ul">
+            <li class="li" ng-repeat="(StoreIndex, Shop) in Shops | orderBy:Name">
                 
                 <p class="solidtext">{{Shop.id}}</p>
                 <img src="{{Shop.Image}}"  width="150" height="150">
@@ -110,6 +128,8 @@
                     {{storeItem.Name }}
                     <p ng-click="GetItemDesc(Shop.id,storeItem.id)">Desc:{{storeItem.Description}}</p>
                 </a>
+                <div class="li-footer">
+                </div>
             </li>
         </ul>
     </fieldset>
