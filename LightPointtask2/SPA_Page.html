@@ -107,9 +107,8 @@
 </head>
 <body class="body" ng-controller="ShopController">
     <fieldset>
-        <legend><a ng-click="ChangeAdminPanelVisibility()">Adding\Deleting Shops</a></legend>
-        <div class="ControlPanel" ng-show="ShowAdminPanel">
-            
+        <legend><a href="#" ng-click="ChangeAdminPanelVisibility()">Adding\Deleting Shops</a></legend>
+        <div ng-show="ShowAdminPanel">
             <table>
                 <tr>
                     <td>
@@ -132,9 +131,12 @@
             </table>
             <button class="btn btn-primary" ng-click="AddShop(InputShop.Name,InputShop.Description)">AddShop</button>
             <button class="btn btn-link" ng-click="deleteShopbyName()">DeleteShopByName</button>
-            <br />
-            <br />
-            <button class="btn btn-info" ng-click="reloadPage()">ReloadPageTest</button>
+            <br /><br />
+            <div class="btn-group">
+                <button class="btn btn-info" ng-click="reloadPage()">ReloadPageTest</button>
+                <button class="btn btn-info" ng-click="reloadPage()">GetInfo</button>
+                <button class="btn btn-info" ng-click="reloadPage()">DoSomething</button>
+            </div>
         </div>
     </fieldset>
     <br />
