@@ -101,14 +101,25 @@
          .li-footer {
              
          }
-         div.ControlPanel {
+         .icon {
+             height: 20px;
+             width: 20px;
+         }
+         div#Header {
+             background-color: aliceblue;
          }
     </style>
 </head>
 <body class="body" ng-controller="ShopController">
+    <div id="Header">
+        <a href="#"><img class="icon img-circle" src="./img/house.png" /> Home</a>
+        <a href="#" ng-click="ChangeAdminPanelVisibility()">AdminPanel</a>
+        <a href="#" ng-click="LoginPanelVisibility()">LogIn</a>
+    </div>
+
     <fieldset>
-        <legend><a href="#" ng-click="ChangeAdminPanelVisibility()">Adding\Deleting Shops</a></legend>
         <div ng-show="ShowAdminPanel">
+            <legend>Administrator Panel</legend>
             <table>
                 <tr>
                     <td>
