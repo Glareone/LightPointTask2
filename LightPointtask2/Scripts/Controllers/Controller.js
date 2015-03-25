@@ -68,6 +68,11 @@ app.controller('ShopController', ['$scope', function ($scope) {
     };
 
     $scope.AddShop = function (name,description) {
+        if (!name || !description) {
+            alert('fill name and description fields');
+            return;
+        }
+
         var NewShop = {
             id: $scope.Shops.length + 1,
             Name: name,
