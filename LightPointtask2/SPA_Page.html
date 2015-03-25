@@ -75,6 +75,16 @@
             -moz-column-count: 2;
             -webkit-column-count: 2;
         }
+        table {
+            margin : 2px;
+        }
+        td {
+              padding: 0.2em 1em;
+         }
+        th {
+             text-align: center;
+        }
+
          .body {
              margin-left:8%;
              margin-right: 8%;
@@ -86,6 +96,7 @@
              border:burlywood 2px;
              border-style: outset;
              padding: 5px;
+             margin: 3px;
          }
          .li-footer {
              
@@ -95,14 +106,31 @@
 <body class="body" ng-controller="ShopController">
     <fieldset>
         <legend>Adding\Deleting Shops</legend>
-        Name:<input id="ShopName" type="text" name="InputShopName" ng-model="InputShop.Name" />
-        <br />
-        Description: <input id="ShopDesc" type="text" ng-model="InputShop.Description" />
-        <br />
-        <button ng-click="AddShop(InputShop.Name,InputShop.Description)">AddShop</button>
+        <div class="ControlPanel">
+            <table>
+                <tr>
+                    <td>
+                        Name:
+                    </td>
+                    <td>
+                        <input id="ShopName" type="text" name="InputShopName" ng-model="InputShop.Name" />
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>
 
-        <button ng-click="deleteShopbyName()">DeleteShopByName</button>
-        <button ng-click="reloadPage()">ReloadPageTest</button>
+                        Description:
+                    </td>
+                    <td>
+                        <input id="ShopDesc" type="text" ng-model="InputShop.Description" />
+                    </td>
+                </tr>
+            </table>
+            <button ng-click="AddShop(InputShop.Name,InputShop.Description)">AddShop</button>
+            <button ng-click="deleteShopbyName()">DeleteShopByName</button>
+            <button ng-click="reloadPage()">ReloadPageTest</button>
+        </div>
     </fieldset>
     <br />
     <fieldset>
