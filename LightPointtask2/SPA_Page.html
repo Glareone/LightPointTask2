@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
@@ -15,42 +15,36 @@
     <script src="./Scripts/Models/GoodsModel.js"></script>
     <title>Task2 Angular for LightPoint</title>
     <style type="text/css">
-        .ng-hide:not(.ng-hide-animate) {
-            /* this is just another form of hiding an element */
-            display: block !important;
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
-        }
-
+        .animate-show {
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}
         .storeItem-details {
             max-height: 100px;
             transition: .8s;
             overflow: hidden;
         }
-
             .storeItem-details.hidden {
                 max-height: 0;
             }
-
         .footer {
             text-align: center;
             margin: 20px 0;
             border-collapse:collapse;
         }
-
         .solidtext {
             text-decoration-style: solid;
             text-decoration-line: underline;
         }
-
         #divPopupHeader {
             background-color: #595959;
             color: #FFFFFF;
             font-weight: bold;
             padding: 10px;
          }
-
          #popupButtonRow {
             position: relative;
             float: left;
@@ -60,7 +54,6 @@
             padding-bottom: 10px;
             padding-top: 10px;
          }
-
          .popupMaskClass {
              position: fixed;
              top: 0;
@@ -84,7 +77,6 @@
         th {
              text-align: center;
         }
-
          .body {
              margin-left:8%;
              margin-right: 8%;
@@ -93,7 +85,6 @@
              margin-left:5%;
          }
          ul.Navigation {
-               display: block;
          }
          li.ShopElement {
              border:burlywood 2px;
@@ -106,7 +97,6 @@
              display: inline-table ;
          }
          .li-footer {
-             
          }
          .icon {
              height: 20px;
@@ -128,7 +118,7 @@
     </div>
 
     <fieldset>
-        <div ng-show="ShowAdminPanel">
+        <div class="AdminPanel" ng-animate="'AdminPanel'" ng-show="ShowAdminPanel">
             <legend>Administrator Panel</legend>
             <table>
                 <tr>
