@@ -79,10 +79,10 @@
              margin-left:8%;
              margin-right: 8%;
          }
-         .ul {
+         ul.Shops {
              margin-left:5%;
          }
-         .li {
+         li.ShopElement {
              border:burlywood 2px;
              border-style: outset;
              padding: 5px;
@@ -110,8 +110,8 @@
         <p>{{GetItemsFromShop()}}</p>
         <p>Total number of Shops: {{Shops.length}}</p>
 
-        <ul class="ul">
-            <li class="li" ng-repeat="(StoreIndex, Shop) in Shops | orderBy:Name">
+        <ul class="Shops">
+            <li class="ShopElement" ng-repeat="(StoreIndex, Shop) in Shops | orderBy:Name">
                 
                 <p class="solidtext">{{Shop.id}}</p>
                 <img src="{{Shop.Image}}"  width="150" height="150">
