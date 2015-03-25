@@ -92,11 +92,18 @@
          ul.Shops {
              margin-left:5%;
          }
+         ul.Navigation {
+               display: block;
+         }
          li.ShopElement {
              border:burlywood 2px;
              border-style: outset;
              padding: 5px;
              margin: 3px;
+             display:table-cell;
+         }
+         li.Header {
+             
          }
          .li-footer {
              
@@ -112,9 +119,12 @@
 </head>
 <body class="body" ng-controller="ShopController">
     <div id="Header">
-        <a href="#"><img class="icon img-circle" src="./img/house.png" /> Home</a>
-        <a href="#" ng-click="ChangeAdminPanelVisibility()">AdminPanel</a>
-        <a href="#" ng-click="LoginPanelVisibility()">LogIn</a>
+        <ul class="Navigation">
+            <li class="Header"><a href="#"><img class="icon img-circle" src="./img/house.png" /> Home&nbsp;</a></li=>
+            <li><a href="#" ng-click="ChangeAdminPanelVisibility()">AdminPanel&nbsp;</a></li>
+            <li><a href="#" ng-click="LoginPanelVisibility()">LogIn&nbsp;</a></li>
+        </ul>
+
     </div>
 
     <fieldset>
