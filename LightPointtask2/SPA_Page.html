@@ -101,12 +101,15 @@
          .li-footer {
              
          }
+         div.ControlPanel {
+         }
     </style>
 </head>
 <body class="body" ng-controller="ShopController">
     <fieldset>
-        <legend>Adding\Deleting Shops</legend>
-        <div class="ControlPanel">
+        <legend><a ng-click="ChangeAdminPanelVisibility()">Adding\Deleting Shops</a></legend>
+        <div class="ControlPanel" ng-show="ShowAdminPanel">
+            
             <table>
                 <tr>
                     <td>

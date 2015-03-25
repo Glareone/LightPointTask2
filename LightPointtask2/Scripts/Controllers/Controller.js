@@ -50,6 +50,15 @@ app.controller('ShopController', ['$scope', function ($scope) {
             ]
         }
     ];
+    $scope.ShowAdminPanel = false;
+
+    $scope.ChangeAdminPanelVisibility = function () {
+        if(!$scope.ShowAdminPanel) {
+            $scope.ShowAdminPanel = true;
+            return;
+        }
+        $scope.ShowAdminPanel = false;
+    }
 
     $scope.deleteShopbyName = function () {
     };
@@ -71,6 +80,7 @@ app.controller('ShopController', ['$scope', function ($scope) {
     $scope.getAllShops = function () {
 
     };
+
 
     $scope.GetShopDesc = function (id) {
 
